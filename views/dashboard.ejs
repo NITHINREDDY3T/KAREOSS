@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <script src="https://kit.fontawesome.com/0342502787.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+
+    
+    <style>
+        a {
+    color: #6d2636;
+    text-decoration: none;
+    background-color: transparent;
+}
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            color: #36475a;
+        }
+
+        header {
+            background-color: #af2a2a;
+            color: #ffffff;
+            padding: 20px 0;
+            top: auto;
+        }
+
+        h1 {
+            font-size: 2.5em;
+        }
+
+
+body {
+   
+    overflow-x: hidden; 
+}
+
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+    position: absolute;
+    top: 28px;
+    left: 9px;
+}
+
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #e9e9e9;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #000000;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+/* Add this to your existing CSS */
+
+/* Overlay styling */
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+
+        .profile-section,
+        .post-section,
+        .auth-section,
+        .why-built-section,
+        .info-section,
+        .category-section,
+        .posts-section {
+            margin-top: 30px;
+        }
+
+        h2 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 0px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .category-list li {
+            margin: 0 15px;
+            font-size: 18px;
+        }
+
+        .posts-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .post-container {
+            background-color: #ffffff;
+    border: 1.9px solid #baa3a3a3;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+        }
+
+        .post-container:hover {
+            transform: scale(1.02);
+        }
+
+        .comment-list {
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 15px;
+        }
+
+        .comment-list li {
+            margin-bottom: 10px;
+        }
+
+        .show-comments-button {
+            background-color: #02f840;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .show-comments-button:hover {
+            background-color: #02d630;
+        }
+
+        footer {
+            margin-top: 30px;
+            background-color: #ffffff;
+            color: #010101;
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+        }
+        .company-logo {
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%; 
+    
+}
+.post-container {
+    background-color: #e7e7e7;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.post-image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+.post-image {
+    
+    height: auto;
+    border-radius: 16px;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+
+.post-header strong {
+    color: #333;
+}
+
+.post-header i {
+    color: #4CAF50; /* Verified symbol color */
+    margin-left: 5px;
+}
+
+.post-content {
+    padding: 20px 0;
+}
+
+.post-meta {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.post-description {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.share-button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.share-button:hover {
+    background-color: #45a049;
+}
+
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="monetag" content="9b7a321c53c43560c5e5c81db7b29a5b">
+
+    <title>KAREOSS</title>
+    <link rel="icon" href="https://i.ibb.co/VDHvzFH/oss-logo-h-1.png" type="image/x-icon">
+
+   
+</head>
+<body>
+
+    <header>
+        <div id="overlay" onclick="toggleSidebar()"></div>
+
+        <div class ="container">
+        <div class="menu-icon" onclick="toggleSidebar()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class ="container">
+            <h3><img src="https://i.ibb.co/VDHvzFH/oss-logo-h-1.png" alt="oss-logo-h-1" border="0" alt="Company Logo" class="company-logo"> KAREOSS<%= user ? ', ' + user.username : '' %> </h3>
+            <div class="sidebar" id="sidebar">
+                <a href="/about-us"><i class="fas fa-info-circle"></i> About Us</a>
+                <a href="/contact-us"><i class="fas fa-envelope"></i> Contact Us</a>
+                <a href="/privacy-policy"><i class="fas fa-lock"></i> Privacy Policy</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mt">
+
+        <% if (user) { %>
+            <section class="profile-section">
+                <h4>Your Profile</h4>
+                <p><i class="fas fa-user"></i> Username<%= user.username %></p>
+                <p><i class="fas fa-at"></i> Email: <%= user.email %></p>
+            </section>
+
+            <section class="post-section mt-4">
+                <section class="post-section mt-4">
+                    <h5>Post a Link</h5>
+                    <form action="/create-post" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="title"><i class="fas fa-heading"></i> Title:</label>
+                            <input type="text" class="form-control" id="title" name="title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="link"><i class="fas fa-link"></i> Link:</label>
+                            <input type="text" class="form-control" id="link" name="link" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="category"><i class="fas fa-folder"></i> Category:</label>
+                            <select class="form-control" id="category" name="category" required>
+                                <option value="Events">Events</option>
+                                <option value="Results">Results</option>
+                                <option value="Research">Research</option>
+                                <option value="Tech /Info">Tech /Info</option>
+                                <option value="Projects">Projects</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="content"><i class="fas fa-file-alt"></i> Content:</label>
+                            <textarea class="form-control" id="content" name="content" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="poster"><i class="fas fa-image"></i> Poster:</label>
+                            <input type="file" class="form-control-file" id="poster" name="poster" accept="image/*">
+                        </div>
+                        <div class="form-group">
+                            <label for="image"><i class="fas fa-image"></i> Image:</label>
+                            <input type="file" class="form-control-file" id="image" name="image" accept="image/*">
+                        </div>
+                        
+                        <br>
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Submit</button>
+                    </form>
+                  
+                </section>
+        <% } %>
+
+        
+
+       
+
+        <section class="category-section mt-4">
+            
+            <ul class="category-list">
+             
+                <li><a href="/?category=Events"><i class="fas fa-calendar-alt"></i> Events</a></li>
+                <li><a href="/?category=Results"><i class="fas fa-chart-bar"></i> Results</a></li>
+                <li><a href="/?category=Research"><i class="fas fa-flask"></i> Research</a></li>
+                <li><a href="/?category=Tech /Info"><i class="fas fa-laptop"></i> Tech /Info</a></li>
+                <li><a href="/?category=Projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
+                
+            </ul>
+        </section>
+        
+        
+
+        <section class="posts-section mt-4">
+           
+            <% if (error) { %>
+                <p>Error: <%= error %></p>
+            <% } %>
+            
+            <ul class="posts-list">
+                <% for (const category in posts) { %>
+                    <h5><%= category %></h5>
+                    <% posts[category].forEach(post => { %>
+                        <li class="post-container">
+                            <div class="post-image-container">
+                                <% if (post.image && post.image.data) { %>
+                                    <img src="data:<%= post.image.contentType %>;base64,<%= post.image.data.toString('base64') %>" alt="Post Image" class="post-image">
+                                <% } %>
+                            </div>
+                            <hr>
+                            <div class="post-content">
+                                <div class="post-header">
+                                    <strong><%= post.userId.username %> <i class="fas fa-check-circle"></i></strong> <!-- Verified symbol -->
+                                    <h3><a href="/post/<%= post._id %>"><%= post.title %></a></h3>
+                                </div>
+                                <div class="post-meta">
+                                    <strong>Category:</strong> <%= post.category %>
+                                    <br>
+                                    <small><%= timeAgo(post.timestamp) %></small>
+                                </div>
+                                <p class="post-description"><%= post.description %></p>
+                                <button class="btn btn-secondary share-button" onclick="sharePost('<%= post._id %>', '<%= post.title %>', '<%= post.link %>')">
+                                    <i class="fas fa-share"></i> Share
+                                </button>
+                            </div>
+                        </li>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    <% }); %>
+                    
+                <% } %>
+            </ul>
+            <% if (user) { %>
+                <a href="/logout" class="btn btn-danger mt-3">Logout</a>
+            <% } %>
+        </section>
+
+    </div>
+
+    <footer class="mt-5">
+        <div class="container">
+           
+            &copy; 2024 KAREOSS -nikki 
+        </div>
+    </footer>
+   
+
+    <script>
+        function timeAgo(timestamp) {
+            const now = new Date();
+            const postedTime = new Date(timestamp);
+            const timeDiff = now - postedTime;
+            const seconds = Math.floor(timeDiff / 1000);
+            const minutes = Math.floor(seconds / 60);
+            const hours = Math.floor(minutes / 60);
+            const days = Math.floor(hours / 24);
+
+            if (days > 0) {
+                return days + ' day(s) ago';
+            } else if (hours > 0) {
+                return hours + ' hour(s) ago';
+            } else if (minutes > 0) {
+                return minutes + ' minute(s) ago';
+            } else {
+                return 'Just now';
+            }
+        }
+
+       
+
+       
+       
+
+    function toggleSidebar() {
+    var sidebar = document.getElementById("sidebar");
+    var overlay = document.getElementById("overlay");
+
+    if (sidebar.style.width === "250px") {
+        
+        sidebar.style.width = "0";
+        overlay.style.display = "none";
+    } else {
+       
+        sidebar.style.width = "250px";
+        overlay.style.display = "block";
+    }
+}
+
+
+
+    </script>
+ <script>
+        function sharePost(postId, title, link) {
+         
+            if (navigator.share) {
+                navigator.share({
+                    title: title,
+                    url: '/post/' + postId
+                })
+                .then(() => console.log('Shared successfully'))
+                .catch((error) => console.error('Error sharing:', error));
+            } else {
+                
+                window.location.href = '/' + postId;
+            }
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+
+</body>
+</html>
