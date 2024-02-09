@@ -241,8 +241,9 @@ ul.category-list {
 ul.category-list li {
     margin: 4.5px;
     font-size: 18px;
-    border: 2px solid #8d8904ba;
-    border-radius: 100px;
+    border-width: 3.5px;
+    border-style: groove;
+    border-image: linear-gradient(to right, #ff5656, #606060) 1;
 }
 
 /* Logout link */
@@ -456,9 +457,9 @@ footer {
     }
 
     ul.category-list li {
-        margin: 5px;
-        border: 2px solid #8d8904ba;
-border-radius: 100px;
+        border-width: 4px;
+        border-style: solid;
+        border-image: linear-gradient(to right, #ff5656, #181818) 1;
     }
 }
 
